@@ -1,0 +1,7 @@
+----
+RUNNING: ./tests/tools_tests
+
+----- test_read_write_data_file
+ALL TESTS PASSED
+
+Tests run: 1
