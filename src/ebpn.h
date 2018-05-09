@@ -58,7 +58,7 @@ int ebpn_train_to_target(
     void(*end_training_callback)(                   // end training callback function
             int epochs,                             // epochs
             double rmse),                           // Root Mean Square Error
-    int                                             // batch size
+    int batch_size                                  // batch size
     );                                              // return number of epochs    
 
 void ebpn_print(t_ebpn *);                          // print the net
