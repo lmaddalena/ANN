@@ -2,14 +2,14 @@
 Arificial Neural Network implemented in C Language. The library includes: synapse, neuron and error back propagatione network (ebpn).
 
 
-### Build
+## Build
     make
 
     \bin\neural.a
 
-### Documentation
+## Documentation
 
-#### Synapse
+### Synapse
     typedef struct synapse {
         double input;                   // input value
         double weight;                  // synapses's weight
@@ -17,7 +17,7 @@ Arificial Neural Network implemented in C Language. The library includes: synaps
         double activation;              // activation value
     } t_synapse;
 
-#### Neuron
+### Neuron
     enum activation_functions {
         SIGMOID,
         GAUSSIAN,
@@ -40,7 +40,7 @@ Arificial Neural Network implemented in C Language. The library includes: synaps
         int id;                                         // neuron's id
     } t_neuron;
     
-#### EBPN (Error Back Propagation Network)
+### EBPN (Error Back Propagation Network)
     typedef struct ebpn {
         t_neuron **layers;                              // layers of the network
         double epsilon;                                 // learning rate (usually from 0.1 to 0.9)
@@ -100,7 +100,7 @@ Arificial Neural Network implemented in C Language. The library includes: synaps
 
     void ebpn_print(t_ebpn *);                          // print the net
 	
-#### Tools
+### Tools
     double** tools_read_data_file(
         char *path,                         // file path (es.:/home/luca/data.dat)
         int *rows,                          // pointer to int where save the number of rows
@@ -121,9 +121,9 @@ Arificial Neural Network implemented in C Language. The library includes: synaps
         int cols                            // number of columns
     );                                      // return rows x columns bidimensional array
 	
-### Usage
+## Usage
 
-#### Create the Error Back Propagation Network
+### Create the Error Back Propagation Network
 Create the EBPN with 3 layers (18 neurons in the input layer, 20 neurons in the hidden layers, 2 neurons int the output layer), learning rate = 0.005, momentum = 0.8, beta = 1, activationation function = HTAN (hyperbolic tangent)
 
     double target_rmse = .15;
@@ -137,7 +137,7 @@ Create the EBPN with 3 layers (18 neurons in the input layer, 20 neurons in the 
 	// create the ebp network
     t_ebpn *e = ebpn_ctor(layerspec, n_layers, epsilon, momentum, beta, fnc);
 	
-#### Training the net
+### Training the net
 
     int rows; 
     int cols; 
@@ -154,7 +154,7 @@ Create the EBPN with 3 layers (18 neurons in the input layer, 20 neurons in the 
 	
     ebpn_train_to_target(e, in, out, rows, 20000, target_rmse, training_callback, end_training_callback, 500);
 	
-#### The training callback functions
+### The training callback functions
 Example of training callback function
 
     void training_callback (int epochs, double rmse) 
