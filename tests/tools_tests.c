@@ -7,7 +7,7 @@ DEFINE_TEST(test_read_write_data_file)
     int rows;
     int cols;
     double **data;
-    data = tools_read_data_file("/home/maddalena/Source/Repos/neural/tests/foo.sample", &rows, & cols);
+    data = tools_read_data_file("/home/maddalena/Source/Repos/ANN/tests/foo.sample", &rows, & cols);
 
     if(data == NULL)
         perror("Error ");
@@ -27,7 +27,7 @@ DEFINE_TEST(test_read_write_data_file)
         }
     }
 
-    int ret = tools_write_data_file("/home/maddalena/Source/Repos/neural/tests/foo2.sample", rows, cols, data, '\t', "%3.2f");
+    int ret = tools_write_data_file("/home/maddalena/Source/Repos/ANN/tests/foo2.sample", rows, cols, data, '\t', "%3.2f");
     test_assert(ret > 0, "Failed write data file");
 
     return NULL;

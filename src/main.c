@@ -18,9 +18,9 @@ int main(){
 
     in[0][0] = .5;
     out[0][0] = .5;
-    ebpn_train(e, in, out, 1, 1, 1);
+    ebpn_train(e, in, out, 1);
 
-    ebpn_execute(e, in[0], 1);
+    ebpn_execute(e, in[0]);
 
 
     ebpn_print(e);
@@ -80,7 +80,7 @@ void test_sin()
 
     void training_callback (int, double);
 
-    ebpn_train_to_target(e, in, out, rows, n_inputs, n_outputs, 50000, .009, training_callback);
+    ebpn_train_to_target(e, in, out, rows, 50000, .009, training_callback, NULL, 500);
     
     ebpn_dtor(e);
     
