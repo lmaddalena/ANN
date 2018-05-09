@@ -1,5 +1,4 @@
-# ANN
-## Artificial Neural Network
+# ANN - Artificial Neural Network
 Arificial Neural Network implemented in C Language. The library includes: synapse, neuron and error back propagatione network (ebpn).
 
 
